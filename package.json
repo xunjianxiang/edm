@@ -1,0 +1,15 @@
+{
+  "name": "edm",
+  "version": "1.0.0",
+  "description": "This is edm template program with mustache and gulp.",
+  "author": "xunjianxiang@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.5",
+    "gulp": "^3.9.1",
+    "gulp-mustache": "^2.3.0",
+    "gulp-plumber": "^1.1.0",
+    "html-loader": "^0.4.4",
+    "nodemailer": "^2.7.0"
+  }
+}

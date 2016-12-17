@@ -1,0 +1,334 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+</head>
+<body>
+    <style>
+        a:hover, a:active, a:visited { color: white; }
+    </style>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; font-size: 14px; font-family: 'Times New Roman', 'arial'，'Microsoft YaHei', 'SimHei', 'sans-serif'; background-color: #f9f9f9;">
+        <tr>
+            <td height="20"></td>
+        </tr>
+        <tr>
+            <td>
+                <!-- 邮件正文 -->
+                <table width="800" align="center" style="background-color: #fff; padding: 10px;">
+                    <tr>
+                        <td>
+                            <!-- logo 及 标题 -->
+                            <table width="100%" align="center">
+                                <tr>
+                                    <td height="10"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: right;">
+                                        <img width="110" height="43" src="http://www.shuzilm.cn/img/logo.png" alt="数盟">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="15"></td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: center;">
+                                        <span style="font-size: 20px; font-weight: bold; line-height: 30px;">
+                                            {{customer.name}} {{date.year}} 年 {{date.month}} 月第 {{date.week}} 周（{{date.begin}}-{{date.end}}）{{title}}
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="10"></td>
+                                </tr>
+                            </table>
+                            <!-- logo 及 标题 -->
+
+                            <!--  总体情况标题 -->
+                            <table width="100%" align="center">
+                                <tr>
+                                    <td style="border-bottom: 1px dashed #555; text-align: left; line-height: 30px; font-weight: bold;">
+                                        <span style="font-size: 16px">本周数据总体情况</span>（产品名：{{customer.package}}）
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- 总体情况标题 -->
+
+                            <!-- 总体情况数据表格 -->
+                            <table width="740" align="right">
+                                <tr>
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                        日期
+                                    </td>
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                        安装总量
+                                    </td>
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                        正常新增
+                                    </td>
+                                    {{#data.general.change.repeat}}
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                        重复数
+                                    </td>
+                                    {{/data.general.change.repeat}}
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                        虚拟机
+                                    </td>
+                                </tr>
+                                {{#data.general.list}}
+                                <tr>
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px; white-space: nowrap;">
+                                        {{date}}
+                                    </td>
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                        {{install}}
+                                    </td>
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                        {{increment}}
+                                    </td>
+                                    {{#data.general.change.repeat}}
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                        {{repeat}}
+                                    </td>
+                                    {{/data.general.change.repeat}}
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                        {{virtual}}
+                                    </td>
+                                </tr>
+                                {{/data.general.list}}
+                                {{#data.general.change}}
+                                <tr>
+                                    <td></td>
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                        {{#install.flag}}
+                                            {{#install.up}}
+                                                <span style="color: red;">&uarr;{{install.per}}</span>
+                                            {{/install.up}}
+                                            {{^install.up}}
+                                                <span style="color: green;">
+                                                    <span style="display: inline-block;margin-top: -50px;">&darr;</span>
+                                                    {{install.per}}
+                                                </span>
+                                            {{/install.up}}
+                                            
+                                        {{/install.flag}}
+                                        {{^install.flag}}
+                                            持平
+                                        {{/install.flag}}
+                                    </td>
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                        {{#increment.flag}}
+                                            {{#increment.up}}
+                                                <span style="color: red;">
+                                                    &uarr;
+                                                    {{increment.per}}
+                                                </span>
+                                            {{/increment.up}}
+                                            {{^increment.up}}
+                                                <span style="color: green;">
+                                                    &darr;
+                                                    {{increment.per}}
+                                                </span>
+                                            {{/increment.up}}
+                                        {{/increment.flag}}
+                                        {{^increment.flag}}
+                                            持平
+                                        {{/increment.flag}}
+                                    </td>
+                                    {{#repeat}}
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                        {{#repeat.flag}}
+                                            {{#repeat.up}}
+                                                <span style="color: red;">
+                                                    &uarr;
+                                                    {{repeat.per}}
+                                                </span>
+                                            {{/repeat.up}}
+                                            {{^repeat.up}}
+                                                <span style="color: green;">
+                                                    &darr;
+                                                    {{repeat.per}}
+                                                </span>
+                                            {{/repeat.up}}
+                                        {{/repeat.flag}}
+                                        {{^repeat.flag}}
+                                            持平
+                                        {{/repeat.flag}}
+                                    </td>
+                                    {{/repeat}}
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                        {{#virtual.flag}}
+                                            {{#virtual.up}}
+                                                <span style="color: red;">
+                                                    &uarr;
+                                                    {{virtual.per}}
+                                                </span>
+                                            {{/virtual.up}}
+                                            {{^virtual.up}}
+                                                <span style="color: green;">
+                                                    &darr;
+                                                    {{virtual.per}}
+                                                </span>
+                                            {{/virtual.up}}
+                                        {{/virtual.flag}}
+                                        {{^virtual.flag}}
+                                            持平
+                                        {{/virtual.flag}}
+                                    </td>
+                                </tr>
+                                {{/data.general.change}}
+                                <tr>
+                                    <td height="5"></td>
+                                </tr>
+                            </table>
+                            <!-- 总体情况数据表格 -->
+
+                            <!-- 总体情况底部链接 -->
+                            <table width="100%" align="center">
+                                <tr>
+                                    <td style="line-height: 60px; text-align: center;">
+                                        <span style="font-size: 14px;">查看详细分析，</span>
+                                        <a href="http://s.shuzilm.cn/#/{{customer.type}}/dashboard" target="_blank" style="font-size: 14px; text-decoration: none; color: white; background-color: #428bca; padding: 8px 12px; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px;">跳转至数盟客户平台</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="30"></td>
+                                </tr>
+                            </table>
+                            <!-- 总体情况底部链接 -->
+
+
+                            <!-- 渠道排名标题 -->
+                            <table width="100%" align="center">
+                                <tr>
+                                    <td style="border-bottom: 1px dashed #555; text-align: left; line-height: 30px; font-weight: bold;">
+                                        <span style="font-size: 16px;">本周 Top 渠道</span>（产品名：{{customer.package}}）
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="10"></td>
+                                </tr>
+                            </table>
+                            <!-- 渠道排名标题 -->
+
+                            <!-- 渠道排名表格 -->
+                            <table width="740" align="right">
+                                <tr>
+                                    <!-- 渠道排名之安装总量 -->
+                                    <td width="360">
+                                        <table width="360" border="0">
+                                            <tr>
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px; white-space: nowrap;">排序</td>
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;"></td>
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">渠道</td> 
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">安装总量</td>
+                                                <td></td>
+                                            </tr>
+                                            {{#data.channel.install}}
+                                            <tr>
+                                                <td style="border-bottom: 1px dashed #555; text-align: center;">{{id}}</td>
+                                                <td style="border-bottom: 1px dashed #555; line-height: 30px; white-space: nowrap;">
+                                                    {{#change.flag}}
+                                                        {{#change.up}}
+                                                            <span style="color: red;">&uarr;{{change.sort}}</span>
+                                                        {{/change.up}}
+                                                        {{^change.up}}
+                                                            <span style="color: green;">&darr;{{change.sort}}</span>
+                                                        {{/change.up}}
+                                                    {{/change.flag}}
+                                                </td> 
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px; white-space: nowrap;">{{name}}</td> 
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;white-space: nowrap;">{{num}}</td>
+                                            </tr>
+                                            {{/data.channel.install}}
+                                        </table>
+                                    </td>
+                                    <!-- 渠道排名之安装总量 -->
+                                    <!-- 渠道排名之正常新增 -->
+                                    <td width="360" border="0" style="border-left: 1px dashed #555;">
+                                        <table width="360">
+                                            <tr>
+                                                <td width="10"></td>
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;white-space: nowrap;">排序</td>
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;"></td>
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">渠道</td> 
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">正常新增</td>
+                                            </tr>
+                                            {{#data.channel.increment}}
+                                            <tr>
+                                                <td></td>
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">{{id}}</td>
+                                                <td style="border-bottom: 1px dashed #555; line-height: 30px; white-space: nowrap;">
+                                                    {{#change.flag}}
+                                                        {{#change.up}}
+                                                            <span style="color: red;">&uarr;{{change.sort}}</span>
+                                                        {{/change.up}}
+                                                        {{^change.up}}
+                                                            <span style="color: green;">&darr;{{change.sort}}</span>
+                                                        {{/change.up}}
+                                                    {{/change.flag}}
+                                                </td> 
+                                                <td height="30" style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;white-space: nowrap;">
+                                                    {{name}}
+                                                        
+                                                </td> 
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;white-space: nowrap;">{{num}}</td>
+                                            </tr>
+                                            {{/data.channel.increment}}
+                                        </table>
+                                    </td>
+                                    <!--  渠道排名之正常新增 -->
+                                </tr>
+                            </table>
+                            <!-- 渠道排名表格 -->
+
+                            <!-- 渠道排名底部链接 -->
+                            <table width="100%" align="center">
+                                <tr>
+                                    <td height="5"></td>
+                                </tr>
+                                <tr>
+                                    <td style="line-height: 60px; text-align: center;">
+                                        <span style="font-size: 14px;">查看详细分析，</span>
+                                        <a href="http://s.shuzilm.cn/#/{{customer.type}}/dashboard" target="_blank" style="font-size: 14px; text-decoration: none; color: white; background-color: #428bca; padding: 8px 12px; border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px;">跳转至数盟客户平台</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="5"></td>
+                                </tr>
+                            </table>
+                            <!-- 渠道排名底部链接 -->
+                        </td>
+                    </tr>
+                </table>
+                <!-- 邮件正文 -->
+
+                <!-- 版权信息 -->
+                <table width="100%" align="center">
+                    <tr>
+                        <td height="10"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table width="800" align="center" style="font-size: 12px;">
+                                <tr>
+                                    <td>
+                                        &copy; 2016 数字联盟网络科技有限公司
+                                    </td>
+                                    <td style="text-align: right;">
+                                        我们向您发送这封重要的邮件，目的是为了向您告知您关心的数据发生了变化。
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <!-- 版权信息 -->
+            </td>
+        </tr>
+        <tr>
+            <td height="25"></td>
+        </tr>
+    </table>
+</body>
+</html>

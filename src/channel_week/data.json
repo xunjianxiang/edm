@@ -1,0 +1,247 @@
+{
+    "title": "渠道数据简报",
+    "customer": {
+        "name": "APUS",
+        "package": "com.apusapps.launcher",
+        "type":  "free"
+    },
+    "date": {
+        "year": 2016,
+        "month": 11,
+        "week": 1,
+        "begin": "10.31",
+        "end": "11.07"
+    },
+    "data": {
+        "general": {
+            "list": [
+                {
+                    "date": "上周（10.26-10.30）",
+                    "install": "66,666,666",
+                    "increment": "33,333,333",
+                    "repeat": "22,222,222",
+                    "virtual": "11,111,111"
+                },
+                {
+                    "date": "本周（10.31-11.07）",
+                    "install": "88,888,888",
+                    "increment": "66,666,666",
+                    "repeat": "11,111,111",
+                    "virtual": "11,111,111"
+                }
+            ],
+            "change": {
+                "install": {
+                    "per": "33.33%",
+                    "flag": true,
+                    "up": true
+                },
+                "increment": {
+                    "per": "33.33%",
+                    "flag": true,
+                    "up": true
+                },
+                "repeat": {
+                    "per": "50%",
+                    "flag": true,
+                    "up": false
+                },
+                "virtual": {
+                    "flag": false
+                }
+            }
+        },
+        "channel": {
+            "install": [
+                {
+                    "id": 1,
+                    "name": "a4a4a2c40ca74aa5b1",
+                    "num": "100,000,000",
+                    "change": {
+                        "flag": false
+                    }
+                },
+                {
+                    "id": 2,
+                    "name": "a4a4a2c40ca74aa5b2",
+                    "num": "90,000,000",
+                    "change": {
+                        "flag": true,
+                        "sort": 3,
+                        "up": true
+                    }
+                },
+                {
+                    "id": 3,
+                    "name": "a4a4a2c40ca74aa5b3",
+                    "num": "80,000,000",
+                    "change": {
+                        "flag": true,
+                        "sort": 1,
+                        "up": false
+                    }
+                },
+                {
+                    "id": 4,
+                    "name": "a4a4a2c40ca74aa5b4",
+                    "num": "70,000,000",
+                    "change": {
+                        "flag": true,
+                        "sort": 5,
+                        "up": true
+                    }
+                },
+                {
+                    "id": 5,
+                    "name": "a4a4a2c40ca74aa5b5",
+                    "num": "60,000,000",
+                    "change": {
+                        "flag": false
+                    }
+                },
+                {
+                    "id": 6,
+                    "name": "a4a4a2c40ca74aa5b6",
+                    "num": "50,000,000",
+                    "change": {
+                        "flag": true,
+                        "sort": 3,
+                        "up": true
+                    }
+                },
+                {
+                    "id": 7,
+                    "name": "a4a4a2c40ca74aa5b7",
+                    "num": "40,000,000",
+                    "change": {
+                        "flag": true,
+                        "sort": 2,
+                        "up": true
+                    }
+                },
+                {
+                    "id": 8,
+                    "name": "a4a4a2c40ca74aa5b8",
+                    "num": "30,000,000",
+                    "change": {
+                        "flag": false
+                    }
+                },
+                {
+                    "id": 9,
+                    "name": "a4a4a2c40ca74aa5b9",
+                    "num": "20,000,000",
+                    "change": {
+                        "flag": false
+                    }
+                },
+                {
+                    "id": 10,
+                    "name": "a4a4a2c40ca74aa5b10",
+                    "num": "10,000,000",
+                    "change": {
+                        "flag": true,
+                        "sort": 59,
+                        "up": true
+                    }
+                }
+            ],
+            "increment": [
+                {
+                    "id": 1,
+                    "name": "a4a4a2c40ca74aa5b1",
+                    "num": "100,000,000",
+                    "change": {
+                        "flag": true,
+                        "sort": 5,
+                        "up": true
+                    }
+                },
+                {
+                    "id": 2,
+                    "name": "a4a4a2c40ca74aa5b2",
+                    "num": "90,000,000",
+                    "change": {
+                        "flag": true,
+                        "sort": 3,
+                        "up": true
+                    }
+                },
+                {
+                    "id": 3,
+                    "name": "a4a4a2c40ca74aa5b3",
+                    "num": "80,000,000",
+                    "change": {
+                        "flag": true,
+                        "sort": 1,
+                        "up": false
+                    }
+                },
+                {
+                    "id": 4,
+                    "name": "a4a4a2c40ca74aa5b4",
+                    "num": "70,000,000",
+                    "change": {
+                        "flag": false
+                    }
+                },
+                {
+                    "id": 5,
+                    "name": "a4a4a2c40ca74aa5b5",
+                    "num": "60,000,000",
+                    "change": {
+                        "flag": true,
+                        "sort": 2,
+                        "up": false
+                    }
+                },
+                {
+                    "id": 6,
+                    "name": "a4a4a2c40ca74aa5b6",
+                    "num": "50,000,000",
+                    "change": {
+                        "flag": true,
+                        "sort": 3,
+                        "up": true
+                    }
+                },
+                {
+                    "id": 7,
+                    "name": "a4a4a2c40ca74aa5b7",
+                    "num": "40,000,000",
+                    "change": {
+                        "flag": false
+                    }
+                },
+                {
+                    "id": 8,
+                    "name": "a4a4a2c40ca74aa5b8",
+                    "num": "30,000,000",
+                    "change": {
+                        "flag": true,
+                        "sort": 6,
+                        "up": true
+                    }
+                },
+                {
+                    "id": 9,
+                    "name": "a4a4a2c40ca74aa5b9",
+                    "num": "20,000,000",
+                    "change": {
+                        "flag": false
+                    }
+                },
+                {
+                    "id": 10,
+                    "name": "a4a4a2c40ca74aa5b10",
+                    "num": "10,000,000",
+                    "change": {
+                        "flag": true,
+                        "sort": 59,
+                        "up": true
+                    }
+                }
+            ]
+        }
+    }
+}
