@@ -22,7 +22,7 @@
                                 </tr>
                                 <tr>
                                     <td style="text-align: right;">
-                                        <img width="110" height="43" src="http://c.test-shuzilm.cn/api/v1/common/edm/{{id}}/logo" alt="数盟">
+                                        <img width="110" height="43" src="http://s.shuzilm.cn/api/v1/common/edm/{{id}}/logo" alt="数盟">
                                     </td>
                                 </tr>
                                 <tr>
@@ -45,7 +45,7 @@
                             <table width="100%" align="center">
                                 <tr>
                                     <td style="border-bottom: 1px dashed #555; text-align: left; line-height: 30px; font-weight: bold;">
-                                        <span style="font-size: 16px">本周数据总体情况</span>（产品名：{{customer.package}}）
+                                        <span style="font-size: 16px">第 {{week_current.num}} 周数据总体情况</span>（产品名：{{customer.package}}）
                                     </td>
                                 </tr>
                             </table>
@@ -54,53 +54,62 @@
                             <!-- 总体情况数据表格 -->
                             <table width="740" align="right">
                                 <tr>
-                                    <td width="200" style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                    <td width="200" style="border-bottom: 1px dashed #555; text-align: center; height: 40px; line-height: 13px;">
                                         日期
                                     </td>
-                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; height: 40px; line-height: 13px;">
                                         安装总量
                                     </td>
-                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; height: 40px; line-height: 13px;">
                                         正常新增
                                     </td>
-                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; height: 40px; line-height: 13px;">
+                                        重复数
+                                    </td>
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; height: 40px; line-height: 13px;">
                                         虚拟机
                                     </td>
                                 </tr>
                                 {{#week_last}}
                                 <tr>
-                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px; white-space: nowrap;">
-                                        上周（{{start}}-{{end}}）
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; height: 40px; line-height: 13px; white-space: nowrap;">
+                                        第 {{week_last.num}} 周（{{start}}-{{end}}）
                                     </td>
-                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; height: 40px; line-height: 13px;">
                                         {{total.num}}
                                     </td>
-                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; height: 40px; line-height: 13px;">
                                         {{normal.num}}
                                     </td>
-                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; height: 40px; line-height: 13px;">
+                                        {{repeat.num}}
+                                    </td>
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; height: 40px; line-height: 13px;">
                                         {{virtual.num}}
                                     </td>
                                 </tr>
                                 {{/week_last}}
                                 {{#week_current}}
                                 <tr>
-                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px; white-space: nowrap;">
-                                        本周（{{start}}-{{end}}）
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; height: 40px; line-height: 13px; white-space: nowrap;">
+                                        第 {{week_current.num}} 周（{{start}}-{{end}}）
                                     </td>
-                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; height: 40px; line-height: 13px;">
                                         {{total.num}}
                                     </td>
-                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; height: 40px; line-height: 13px;">
                                         {{normal.num}}
                                     </td>
-                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; height: 40px; line-height: 13px;">
+                                        {{repeat.num}}
+                                    </td>
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; height: 40px; line-height: 13px;">
                                         {{virtual.num}}
                                     </td>
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; height: 40px; line-height: 13px;">
                                         {{#total.change_flag}}
                                             {{#total.change_up}}
                                                 <span style="color: red;">&uarr;{{total.change_per}}%</span>
@@ -113,7 +122,7 @@
                                             持平
                                         {{/total.change_flag}}
                                     </td>
-                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; height: 40px; line-height: 13px;">
                                         {{#normal.change_flag}}
                                             {{#normal.change_up}}
                                                 <span style="color: red;">&uarr;{{normal.change_per}}%</span>
@@ -126,7 +135,20 @@
                                             持平
                                         {{/normal.change_flag}}
                                     </td>
-                                    <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; height: 40px; line-height: 13px;">
+                                        {{#repeat.change_flag}}
+                                            {{#repeat.change_up}}
+                                                <span style="color: red;">&uarr;{{repeat.change_per}}%</span>
+                                            {{/repeat.change_up}}
+                                            {{^repeat.change_up}}
+                                                <span style="color: green;">&darr;{{repeat.change_per}}%</span>
+                                            {{/repeat.change_up}}
+                                        {{/repeat.change_flag}}
+                                        {{^repeat.change_flag}}
+                                            持平
+                                        {{/repeat.change_flag}}
+                                    </td>
+                                    <td style="border-bottom: 1px dashed #555; text-align: center; height: 40px; line-height: 13px;">
                                         {{#virtual.change_flag}}
                                             {{#virtual.change_up}}
                                                 <span style="color: red;">&uarr;{{virtual.change_per}}%</span>
@@ -150,7 +172,7 @@
                                 <tr>
                                     <td style="line-height: 30px; text-align: center;">
                                         <span style="font-size: 14px;">查看详细分析，</span>
-                                        <a href="http://c.test-shuzilm.cn/#/redirect?edm={{id}}&ctype={{customer.type}}&page=stat.integrated&params={%22pkgName%22:%22{{customer.package}}%22,%22dateStart%22:%22{{week_current.start}}%22,%22dateEnd%22:%22{{week_current.end}}%22}" target="_blank" style="font-size: 14px; text-decoration: none; color: white; background-color: #428bca; padding: 12px; -webkit-border-radius: 3px; border-radius: 3px;">&nbsp;跳转至数盟客户平台&nbsp;</a>
+                                        <a href="http://s.shuzilm.cn/#/redirect?edm={{id}}&ctype={{customer.type}}&page=stat.integrated&params={%22pkgName%22:%22{{customer.package}}%22,%22dateStart%22:%22{{week_current.start}}%22,%22dateEnd%22:%22{{week_current.end}}%22}" target="_blank" style="font-size: 14px; text-decoration: none; color: white; background-color: #428bca; padding: 12px; -webkit-border-radius: 3px; border-radius: 3px;">&nbsp;跳转至数盟客户平台&nbsp;</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -164,7 +186,7 @@
                             <table width="100%" align="center">
                                 <tr>
                                     <td style="border-bottom: 1px dashed #555; text-align: left; line-height: 30px; font-weight: bold;">
-                                        <span style="font-size: 16px;">本周 Top 渠道</span>（产品名：{{customer.package}}）
+                                        <span style="font-size: 16px;">第 {{week_current.num}} 周 Top 渠道</span>（产品名：{{customer.package}}）
                                     </td>
                                 </tr>
                                 <tr>
@@ -180,16 +202,16 @@
                                     <td width="360">
                                         <table width="360" border="0">
                                             <tr>
-                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px; white-space: nowrap;">排序</td>
-                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;"></td>
-                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">渠道</td> 
-                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">安装总量</td>
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; mso-line-height-rule: exactly; height: 40px; line-height: 13px; white-space: nowrap;">排序</td>
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; mso-line-height-rule: exactly; height: 40px; line-height: 13px;"></td>
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; mso-line-height-rule: exactly; height: 40px; line-height: 13px;">渠道</td> 
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; mso-line-height-rule: exactly; height: 40px; line-height: 13px;">安装总量</td>
                                                 <td></td>
                                             </tr>
                                             {{#week_current.top_total}}
                                             <tr>
-                                                <td style="border-bottom: 1px dashed #555; text-align: center;">{{id}}</td>
-                                                <td style="border-bottom: 1px dashed #555; line-height: 30px; white-space: nowrap;">
+                                                <td style="border-bottom: 1px dashed #555; mso-line-height-rule: exactly; height: 40px; line-height: 13px; text-align: center;">{{id}}</td>
+                                                <td style="border-bottom: 1px dashed #555; mso-line-height-rule: exactly; height: 40px; line-height: 13px; white-space: nowrap; text-align: center;">
                                                     {{#change.flag}}
                                                         {{#change.up}}
                                                             <span style="color: red;">&uarr;{{change.sort}}</span>
@@ -198,9 +220,12 @@
                                                             <span style="color: green;">&darr;{{change.sort}}</span>
                                                         {{/change.up}}
                                                     {{/change.flag}}
+                                                    {{^change.flag}}
+                                                        <span style="color: gray;">--</span>
+                                                    {{/change.flag}}
                                                 </td> 
-                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px; white-space: nowrap;">{{name}}</td> 
-                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;white-space: nowrap;">{{num}}</td>
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; mso-line-height-rule: exactly; height: 40px; line-height: 13px; white-space: nowrap;">{{name}}</td> 
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; mso-line-height-rule: exactly; height: 40px; line-height: 13px;white-space: nowrap;">{{num}}</td>
                                             </tr>
                                             {{/week_current.top_total}}
                                         </table>
@@ -211,16 +236,16 @@
                                         <table width="360">
                                             <tr>
                                                 <td width="10"></td>
-                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;white-space: nowrap;">排序</td>
-                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;"></td>
-                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">渠道</td> 
-                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">正常新增</td>
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; mso-line-height-rule: exactly; height: 40px; line-height: 13px;white-space: nowrap;">排序</td>
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; mso-line-height-rule: exactly; height: 40px; line-height: 13px;"></td>
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; mso-line-height-rule: exactly; height: 40px; line-height: 13px;">渠道</td> 
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; mso-line-height-rule: exactly; height: 40px; line-height: 13px;">正常新增</td>
                                             </tr>
                                             {{#week_current.top_normal}}
                                             <tr>
                                                 <td></td>
-                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;">{{id}}</td>
-                                                <td style="border-bottom: 1px dashed #555; line-height: 30px; white-space: nowrap;">
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; mso-line-height-rule: exactly; height: 40px; line-height: 13px;">{{id}}</td>
+                                                <td style="border-bottom: 1px dashed #555; mso-line-height-rule: exactly; height: 40px; line-height: 13px; white-space: nowrap; text-align: center;">
                                                     {{#change.flag}}
                                                         {{#change.up}}
                                                             <span style="color: red;">&uarr;{{change.sort}}</span>
@@ -229,12 +254,15 @@
                                                             <span style="color: green;">&darr;{{change.sort}}</span>
                                                         {{/change.up}}
                                                     {{/change.flag}}
+                                                    {{^change.flag}}
+                                                        <span style="color: gray;">--</span>
+                                                    {{/change.flag}}
                                                 </td> 
-                                                <td height="30" style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;white-space: nowrap;">
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; mso-line-height-rule: exactly; height: 40px; line-height: 13px;white-space: nowrap;">
                                                     {{name}}
                                                         
                                                 </td> 
-                                                <td style="border-bottom: 1px dashed #555; text-align: center; line-height: 30px;white-space: nowrap;">{{num}}</td>
+                                                <td style="border-bottom: 1px dashed #555; text-align: center; mso-line-height-rule: exactly; height: 40px; line-height: 13px;white-space: nowrap;">{{num}}</td>
                                             </tr>
                                             {{/week_current.top_normal}}
                                         </table>
@@ -252,7 +280,7 @@
                                 <tr>
                                     <td style="line-height: 30px; text-align: center;">
                                         <span style="font-size: 14px;">查看详细分析，</span>
-                                        <a href="http://c.test-shuzilm.cn/#/redirect?edm={{id}}&ctype={{customer.type}}&page=stat.integrated&params={%22pkgName%22:%22{{customer.package}}%22,%22dateStart%22:%22{{week_current.start}}%22,%22dateEnd%22:%22{{week_current.end}}%22}" target="_blank" style="font-size: 14px; text-decoration: none; color: white; background-color: #428bca; padding: 12px; -webkit-border-radius: 3px; border-radius: 3px;">&nbsp;跳转至数盟客户平台&nbsp;</a>
+                                        <a href="http://s.shuzilm.cn/#/redirect?edm={{id}}&ctype={{customer.type}}&page=stat.integrated&params={%22pkgName%22:%22{{customer.package}}%22,%22dateStart%22:%22{{week_current.start}}%22,%22dateEnd%22:%22{{week_current.end}}%22}" target="_blank" style="font-size: 14px; text-decoration: none; color: white; background-color: #428bca; padding: 12px; -webkit-border-radius: 3px; border-radius: 3px;">&nbsp;跳转至数盟客户平台&nbsp;</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -275,7 +303,7 @@
                             <table width="800" align="center" style="font-size: 12px;">
                                 <tr>
                                     <td>
-                                        &copy; 2016 数字联盟网络科技有限公司
+                                        &copy; {{week_current.year}} 数字联盟网络科技有限公司
                                     </td>
                                     <td style="text-align: right;">
                                         我们向您发送这封重要的邮件，目的是为了向您告知您关心的数据发生了变化。

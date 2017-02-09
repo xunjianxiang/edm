@@ -6,10 +6,10 @@
         "type":  "3"
     },
     "week_current": {
-        "year": "2016",
-        "num": 51,
-        "start": "2016.12.21",
-        "end": "2016.12.29",
+        "year": "2017",
+        "num": 1,
+        "start": "2017.02.02",
+        "end": "2017.02.07",
         "total": {
             "num": "50,000,000",
             "change_flag": true,
@@ -21,6 +21,12 @@
             "change_flag": true,
             "change_up": true,
             "change_per": 37.5
+        },
+        "repeat": {
+            "num": "20,000,000",
+            "change_flag": true,
+            "change_up": true,
+            "change_per": 50
         },
         "virtual": {
             "num": "10,000,000",
@@ -220,15 +226,18 @@
         ]
     },
     "week_last": {
-        "num": 0,
+        "num": 52,
         "year": "2016",
-        "start": "2016.12.21",
-        "end": "2016.12.29",
+        "start": "2016.12.26",
+        "end": "2017.01.01",
         "total": {
             "num": "40,000,000"
         },
         "normal": {
             "num": "25,000,000"
+        },
+        "repeat": {
+            "num": "30,000,000"
         },
         "virtual": {
             "num": "15,000,000"

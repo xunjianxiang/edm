@@ -7,11 +7,11 @@ let sendEmail = (task) => {
     let html = fs.readFileSync(`./dest/${task}/index.html`, 'utf-8');
 
     let mailList = [
-        // 'xunjx@shuzilm.cn',
+        'xunjx@shuzilm.cn',
         // 'songguang@shuzilm.cn',
         // 'liupy@shuzilm.cn',
-        // 'panxq@shuzilm.cn'
-        // 'pan_cathy@163.com'
+        'panxq@shuzilm.cn',
+        'pan_cathy@163.com'
     ];
 
     let data = require(`./src/${task}/data.json`);
